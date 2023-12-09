@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Lexicon++.iml" filepath="$PROJECT_DIR$/.idea/Lexicon++.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Lexiconpp.iml" filepath="$PROJECT_DIR$/.idea/Lexiconpp.iml" />
     </modules>
   </component>
 </project>

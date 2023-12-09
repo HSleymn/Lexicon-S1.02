@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: Lexicon__
+# Project: Lexiconpp
 # Configurations: Debug
 # =============================================================================
 
@@ -41,56 +41,40 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/Users/PC/Desktop/BUT$ première$ année/PERIODE_B/IAD_CPP/S1.02/Lexicon-S1.02/Lexiconpp/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target Lexicon__
+# Object build statements for EXECUTABLE target Lexiconpp
 
 
 #############################################
-# Order-only phony target for Lexicon__
+# Order-only phony target for Lexiconpp
 
-build cmake_object_order_depends_target_Lexicon__: phony || CMakeFiles/Lexicon__.dir
+build cmake_object_order_depends_target_Lexiconpp: phony || CMakeFiles/Lexiconpp.dir
 
-build CMakeFiles/Lexicon__.dir/main.cpp.obj: CXX_COMPILER__Lexicon___unscanned_Debug C$:/Users/PC/Desktop/BUT$ première$ année/PERIODE_B/IAD_CPP/S1.02/Lexicon-S1.02/Lexiconpp/main.cpp || cmake_object_order_depends_target_Lexicon__
-  DEP_FILE = CMakeFiles\Lexicon__.dir\main.cpp.obj.d
+build CMakeFiles/Lexiconpp.dir/main.cpp.obj: CXX_COMPILER__Lexiconpp_unscanned_Debug C$:/Users/PC/Desktop/BUT$ première$ année/PERIODE_B/IAD_CPP/S1.02/Lexicon-S1.02/Lexiconpp/main.cpp || cmake_object_order_depends_target_Lexiconpp
+  DEP_FILE = CMakeFiles\Lexiconpp.dir\main.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\Lexicon__.dir
-  OBJECT_FILE_DIR = CMakeFiles\Lexicon__.dir
-  TARGET_COMPILE_PDB = CMakeFiles\Lexicon__.dir\
-  TARGET_PDB = Lexicon__.pdb
-
-build CMakeFiles/Lexicon__.dir/pile.cpp.obj: CXX_COMPILER__Lexicon___unscanned_Debug C$:/Users/PC/Desktop/BUT$ première$ année/PERIODE_B/IAD_CPP/S1.02/Lexicon-S1.02/Lexiconpp/pile.cpp || cmake_object_order_depends_target_Lexicon__
-  DEP_FILE = CMakeFiles\Lexicon__.dir\pile.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\Lexicon__.dir
-  OBJECT_FILE_DIR = CMakeFiles\Lexicon__.dir
-  TARGET_COMPILE_PDB = CMakeFiles\Lexicon__.dir\
-  TARGET_PDB = Lexicon__.pdb
-
-build CMakeFiles/Lexicon__.dir/carte.cpp.obj: CXX_COMPILER__Lexicon___unscanned_Debug C$:/Users/PC/Desktop/BUT$ première$ année/PERIODE_B/IAD_CPP/S1.02/Lexicon-S1.02/Lexiconpp/carte.cpp || cmake_object_order_depends_target_Lexicon__
-  DEP_FILE = CMakeFiles\Lexicon__.dir\carte.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\Lexicon__.dir
-  OBJECT_FILE_DIR = CMakeFiles\Lexicon__.dir
-  TARGET_COMPILE_PDB = CMakeFiles\Lexicon__.dir\
-  TARGET_PDB = Lexicon__.pdb
+  OBJECT_DIR = CMakeFiles\Lexiconpp.dir
+  OBJECT_FILE_DIR = CMakeFiles\Lexiconpp.dir
+  TARGET_COMPILE_PDB = CMakeFiles\Lexiconpp.dir\
+  TARGET_PDB = Lexiconpp.pdb
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target Lexicon__
+# Link build statements for EXECUTABLE target Lexiconpp
 
 
 #############################################
-# Link the executable Lexicon__.exe
+# Link the executable Lexiconpp.exe
 
-build Lexicon__.exe: CXX_EXECUTABLE_LINKER__Lexicon___Debug CMakeFiles/Lexicon__.dir/main.cpp.obj CMakeFiles/Lexicon__.dir/pile.cpp.obj CMakeFiles/Lexicon__.dir/carte.cpp.obj
+build Lexiconpp.exe: CXX_EXECUTABLE_LINKER__Lexiconpp_Debug CMakeFiles/Lexiconpp.dir/main.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\Lexicon__.dir
+  OBJECT_DIR = CMakeFiles\Lexiconpp.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = CMakeFiles\Lexicon__.dir\
-  TARGET_FILE = Lexicon__.exe
-  TARGET_IMPLIB = libLexicon__.dll.a
-  TARGET_PDB = Lexicon__.pdb
+  TARGET_COMPILE_PDB = CMakeFiles\Lexiconpp.dir\
+  TARGET_FILE = Lexiconpp.exe
+  TARGET_IMPLIB = libLexiconpp.dll.a
+  TARGET_PDB = Lexiconpp.pdb
 
 
 #############################################
@@ -118,7 +102,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build Lexicon__: phony Lexicon__.exe
+build Lexiconpp: phony Lexiconpp.exe
 
 # =============================================================================
 # Folder targets.
@@ -128,7 +112,7 @@ build Lexicon__: phony Lexicon__.exe
 #############################################
 # Folder: C:/Users/PC/Desktop/BUT première année/PERIODE_B/IAD_CPP/S1.02/Lexicon-S1.02/Lexiconpp/cmake-build-debug
 
-build all: phony Lexicon__.exe
+build all: phony Lexiconpp.exe
 
 # =============================================================================
 # Built-in targets

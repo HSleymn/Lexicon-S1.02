@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Lexicon__.exe"
+			"path" : "Lexiconpp.exe"
 		},
 		{
-			"path" : "Lexicon__.pdb"
+			"path" : "Lexiconpp.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -52,13 +52,11 @@
 			},
 			"sourceIndexes" : 
 			[
-				0,
-				1,
-				2
+				0
 			]
 		}
 	],
-	"id" : "Lexicon__::@6890427a1f51a3e7e1df",
+	"id" : "Lexiconpp::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -78,8 +76,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "Lexicon__",
-	"nameOnDisk" : "Lexicon__.exe",
+	"name" : "Lexiconpp",
+	"nameOnDisk" : "Lexiconpp.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -91,9 +89,7 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0,
-				1,
-				2
+				0
 			]
 		}
 	],
@@ -103,18 +99,6 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "main.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "pile.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "carte.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

@@ -659,7 +659,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Program Files (x86)/Lexicon__"
+			"value" : "C:/Program Files (x86)/Lexiconpp"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -875,7 +875,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "Lexicon__"
+			"value" : "Lexiconpp"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1254,7 +1254,7 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "Lexicon___BINARY_DIR",
+			"name" : "Lexiconpp_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1266,7 +1266,7 @@
 			"value" : "C:/Users/PC/Desktop/BUT premi\u00e8re ann\u00e9e/PERIODE_B/IAD_CPP/S1.02/Lexicon-S1.02/Lexiconpp/cmake-build-debug"
 		},
 		{
-			"name" : "Lexicon___IS_TOP_LEVEL",
+			"name" : "Lexiconpp_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1278,7 +1278,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "Lexicon___SOURCE_DIR",
+			"name" : "Lexiconpp_SOURCE_DIR",
 			"properties" : 
 			[
 				{

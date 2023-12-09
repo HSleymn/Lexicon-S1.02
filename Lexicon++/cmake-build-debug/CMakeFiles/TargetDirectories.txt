@@ -1,3 +1,0 @@
-C:/Users/PC/Desktop/BUT première année/PERIODE_B/IAD_CPP/S1.02/Lexicon-S1.02/Lexicon++/cmake-build-debug/CMakeFiles/Lexicon__.dir
-C:/Users/PC/Desktop/BUT première année/PERIODE_B/IAD_CPP/S1.02/Lexicon-S1.02/Lexicon++/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/PC/Desktop/BUT première année/PERIODE_B/IAD_CPP/S1.02/Lexicon-S1.02/Lexicon++/cmake-build-debug/CMakeFiles/rebuild_cache.dir

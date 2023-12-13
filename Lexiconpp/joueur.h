@@ -4,12 +4,12 @@
 
 #ifndef LEXICONPP_JOUEUR_H
 #define LEXICONPP_JOUEUR_H
-
 #include "carte.h"
+#define nombreDeCarteJoueur 10
 struct Joueur{
     unsigned int idJoueur;
     unsigned int nombreDePoints;
-    Carte jeuDeCarte[];
+    Carte mainDuJoueur[nombreDeCarteJoueur];
 };
 
 struct Joueurs{
@@ -17,6 +17,6 @@ struct Joueurs{
     unsigned int nbJoueursTotal;
     unsigned int nbJoueursEnLice;
 };
-
+void initialiserMainDuJoueur(Joueur& joueur, const jeuDeCarte jeuMelange);
 
 #endif //LEXICONPP_JOUEUR_H

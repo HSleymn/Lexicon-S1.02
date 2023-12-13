@@ -49,12 +49,6 @@ cmake_ninja_workdir = C$:/Users/PC/Desktop/BUT$ première$ année/PERIODE_B/IAD_CP
 
 build cmake_object_order_depends_target_Lexiconpp: phony || CMakeFiles/Lexiconpp.dir
 
-build CMakeFiles/Lexiconpp.dir/main.cpp.obj: CXX_COMPILER__Lexiconpp_unscanned_Debug C$:/Users/PC/Desktop/BUT$ première$ année/PERIODE_B/IAD_CPP/S1.02/Lexicon-S1.02/Lexiconpp/main.cpp || cmake_object_order_depends_target_Lexiconpp
-  DEP_FILE = CMakeFiles\Lexiconpp.dir\main.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\Lexiconpp.dir
-  OBJECT_FILE_DIR = CMakeFiles\Lexiconpp.dir
-
 build CMakeFiles/Lexiconpp.dir/pile.cpp.obj: CXX_COMPILER__Lexiconpp_unscanned_Debug C$:/Users/PC/Desktop/BUT$ première$ année/PERIODE_B/IAD_CPP/S1.02/Lexicon-S1.02/Lexiconpp/pile.cpp || cmake_object_order_depends_target_Lexiconpp
   DEP_FILE = CMakeFiles\Lexiconpp.dir\pile.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
@@ -73,6 +67,12 @@ build CMakeFiles/Lexiconpp.dir/joueur.cpp.obj: CXX_COMPILER__Lexiconpp_unscanned
   OBJECT_DIR = CMakeFiles\Lexiconpp.dir
   OBJECT_FILE_DIR = CMakeFiles\Lexiconpp.dir
 
+build CMakeFiles/Lexiconpp.dir/main.cpp.obj: CXX_COMPILER__Lexiconpp_unscanned_Debug C$:/Users/PC/Desktop/BUT$ première$ année/PERIODE_B/IAD_CPP/S1.02/Lexicon-S1.02/Lexiconpp/main.cpp || cmake_object_order_depends_target_Lexiconpp
+  DEP_FILE = CMakeFiles\Lexiconpp.dir\main.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Lexiconpp.dir
+  OBJECT_FILE_DIR = CMakeFiles\Lexiconpp.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Lexiconpp
@@ -81,7 +81,7 @@ build CMakeFiles/Lexiconpp.dir/joueur.cpp.obj: CXX_COMPILER__Lexiconpp_unscanned
 #############################################
 # Link the executable Lexiconpp.exe
 
-build Lexiconpp.exe: CXX_EXECUTABLE_LINKER__Lexiconpp_Debug CMakeFiles/Lexiconpp.dir/main.cpp.obj CMakeFiles/Lexiconpp.dir/pile.cpp.obj CMakeFiles/Lexiconpp.dir/carte.cpp.obj CMakeFiles/Lexiconpp.dir/joueur.cpp.obj
+build Lexiconpp.exe: CXX_EXECUTABLE_LINKER__Lexiconpp_Debug CMakeFiles/Lexiconpp.dir/pile.cpp.obj CMakeFiles/Lexiconpp.dir/carte.cpp.obj CMakeFiles/Lexiconpp.dir/joueur.cpp.obj CMakeFiles/Lexiconpp.dir/main.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Lexiconpp.dir

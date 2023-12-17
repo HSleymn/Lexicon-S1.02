@@ -8,3 +8,28 @@ struct Talon {
     int sommet;			
 
 };
+
+void initialiser(Talon& t, unsigned int c );{
+
+
+    
+}
+
+bool estVide(const Talon& t);{
+
+}
+
+void empiler(Talon& t, const Carte& Ca);{
+
+
+}
+
+void depiler(Talon& t){
+
+
+
+}
+
+
+
+

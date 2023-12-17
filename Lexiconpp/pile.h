@@ -13,5 +13,7 @@ struct Pile {
     int sommet;				// indice de sommet de pile dans tab
 
 };
+void initialiser(Pile& p, unsigned int c);{
+
 
 #endif //LEXICONPP_PILE_H

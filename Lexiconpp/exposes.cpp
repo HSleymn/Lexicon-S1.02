@@ -1,3 +1,7 @@
+#include <iostream>
+#include "carte.h"
+#include "joueur.h"
+#include <typeinfo>
 #include "expose.h"
 using namespace std;
 

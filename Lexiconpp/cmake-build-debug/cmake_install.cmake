@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/PC/Desktop/BUT première année/PERIODE_B/IAD_CPP/S1.02/Lexicon-S1.02/Lexiconpp
+# Install script for directory: C:/Users/PC/Desktop/BUT_première_année/PERIODE_B/IAD_CPP/S1.02/Lexicon-S1.02/Lexiconpp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/PC/Desktop/BUT première année/PERIODE_B/IAD_CPP/S1.02/Lexicon-S1.02/Lexiconpp/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/PC/Desktop/BUT_première_année/PERIODE_B/IAD_CPP/S1.02/Lexicon-S1.02/Lexiconpp/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

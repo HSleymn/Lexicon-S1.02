@@ -17,6 +17,8 @@ struct Joueurs{
     unsigned int nbJoueursTotal;
     unsigned int nbJoueursEnLice;
 };
-void initialiserMainDuJoueur(Joueur& joueur, const jeuDeCarte jeuMelange);
+void initialiserLaMainDuJoueur(Joueur& joueur, const jeuDeCarte jeuMelange);
+void initialiserLesJoueurs(Joueurs& lesJoueurs, const unsigned int nombreDeJoueurs, jeuDeCarte jeuMelange );
+
 
 #endif //LEXICONPP_JOUEUR_H

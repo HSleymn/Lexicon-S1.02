@@ -13,11 +13,15 @@ using namespace std;
 int main(int argc, char** argv)
 {
         unsigned int nbJoueurs = atoi(argv[1]);
-        nbJoueurs = 3;
       jeuDeCarte caca;
       initialiserJeuDeCarte(caca);
      Joueurs joueurs;
      initialiserLesJoueurs(joueurs,nbJoueurs, caca);
-    cout <<"CACA AU MAX " ;
+     cout << endl;
+    for (int i=0; i<nbJoueurs; i++){
+        for (int j=0; j<nombreDeCarteJoueur; j++)
+        cout << joueurs.tabJoueurs[i].mainDuJoueur[j].lettre;
+        cout << endl;
+    }
     return 0;
 }

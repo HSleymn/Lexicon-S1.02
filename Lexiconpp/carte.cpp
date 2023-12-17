@@ -8,7 +8,7 @@
 #include "lettres.h"
 
 
-#define nombreDeCarte 52
+#define nombreDeCarte 51
 
 void melangerJeuDeCarte(jeuDeCarte& jeu) {
     Carte carteIntermediaire;

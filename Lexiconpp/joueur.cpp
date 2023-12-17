@@ -4,7 +4,7 @@
 
 #include "joueur.h"
 #include "iostream"
-#define nombreDeCarte 52
+#define nombreDeCarte 51
 #define nombreDeCarteJoueur 10
 
 /*
@@ -22,18 +22,16 @@ void initialiserLesJoueurs(Joueurs& lesJoueurs, const unsigned int nombreDeJoueu
     lesJoueurs.tabJoueurs = new Joueur[nombreDeJoueurs];
     jeuDeCarte jeutmp;
     for (int compteur=0; compteur < nombreDeJoueurs; ++compteur){
-        std::cout << "cacaaaa" << std::endl;
-        std::cout << "le joueur " << compteur << " a pour cartes"<< std::endl;
+        lesJoueurs.tabJoueurs[compteur].idJoueur = compteur +1;
+        lesJoueurs.tabJoueurs[compteur].nombreDePoints =0;
         jeutmp.cartes  = new Carte[nombreDeCarteJoueur];
         unsigned int indiceCarte = compteur*10;
         for (int carteCompteur=0; carteCompteur < nombreDeCarteJoueur; carteCompteur++ ){
-            jeutmp.cartes[indiceCarte] = jeuMelange.cartes[indiceCarte];
-            std::cout << jeutmp.cartes[indiceCarte].lettre << std::endl;
+            jeutmp.cartes[carteCompteur] = jeuMelange.cartes[indiceCarte];
             ++indiceCarte;
         }
-
-        delete[] jeutmp.cartes;
-        std::cout << "caca" << std::endl;
+        initialiserLaMainDuJoueur(lesJoueurs.tabJoueurs[compteur], jeutmp);
+        delete [] jeutmp.cartes;
 
     }
 };

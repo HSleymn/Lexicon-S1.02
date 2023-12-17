@@ -4,7 +4,7 @@
 
 #ifndef LEXICONPP_CARTE_H
 #define LEXICONPP_CARTE_H
-#define nombreDeCarte 52
+#define nombreDeCarte 51
 
 struct Carte{
     unsigned int nb_points;

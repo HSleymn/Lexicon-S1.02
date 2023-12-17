@@ -1,1 +1,2 @@
-
+#ifndef LEXICONPP_TALON_H
+#define LEXICONPP_TALON_H

@@ -1,46 +1,22 @@
-#ifndef LEXICONPP_TALON_H
-#define LEXICONPP_TALON_H
+#ifndef LEXICONPP_EXPOSES_H
+#define LEXICONPP_EXPOSES_H
+#include "carte.h"
 
 
-struct  expose{
+struct Pile_Exposee{
     unsigned int capacite;  
     Carte* tab;		
     int sommet;			
 
 };
-void initialiser(expose& e, unsigned int c );{
+void initialiser(Pile_Exposee& pileDesCartesExposees, const unsigned int nombreDeCarteRestant );
 
-        for (int i = 0; i < taille; ++i)
-    empiler(e, m[i]);
-        for (int i = 0; i < taille; ++i) {
-     m[i] = sommet(e);
-    depiler(t);
-     }
-    detruire(e);
-}
+bool estVide(const Pile_Exposee& pileDesCartesExposees);
 
+bool estPlein(const Pile_Exposee& pileDesCartesExposees);
 
-bool estVide(const expose& e);{
-    E  = 0;
-    std::stack<E> temp = elements;  // Utilise une copie pour ne pas modifier la pile originale
-        while (!temp.empty()) {
-            somme += temp.top();
-            temp.pop();
-}
+void empiler(Pile_Exposee& pileDesCartesExposees, const Carte& carte);
 
-void empiler(expose& e, const Carte& Ca);{
+void depiler(Pile_Exposee& pileDesCartesExposees);
 
-    assert(!estPleine(p));
-	e.elems[++e.sommet] = Ca;
-}
-}
-
-void depiler(expose& e){
-
-    assert(!estVide(t));
-	int v = e.elems[e.sommet--];
-	return v;
-
-}
-
-}
+#endif

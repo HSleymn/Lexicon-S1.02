@@ -10,6 +10,7 @@ struct Joueur{
     unsigned int idJoueur;
     unsigned int nombreDePoints;
     Carte mainDuJoueur[nombreDeCarteJoueur];
+    unsigned int nombreDeCartesEnMain;
 };
 
 struct Joueurs{

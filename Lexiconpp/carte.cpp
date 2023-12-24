@@ -27,6 +27,7 @@ void melangerJeuDeCarte(jeuDeCarte& jeu) {
 void initialiserJeuDeCarte(jeuDeCarte& jeu) {
 
     jeu.cartes = new Carte[nombreDeCarte];
+    jeu.capacite = nombreDeCarte;
     for (int compteur = 0; compteur < nombreDeCarte; ++compteur) {
         jeu.cartes[compteur].lettre = tableauDeLettres[compteur];
         if (jeu.cartes[compteur].lettre == 'A' || jeu.cartes[compteur].lettre == 'E' ||
@@ -48,10 +49,7 @@ void initialiserJeuDeCarte(jeuDeCarte& jeu) {
         } else if (jeu.cartes[compteur].lettre == 'B' || jeu.cartes[compteur].lettre == 'F' ||
                    jeu.cartes[compteur].lettre == 'X' || jeu.cartes[compteur].lettre == 'Z') {
             jeu.cartes[compteur].nb_points = 2;
-        } else if (jeu.cartes[compteur].lettre == '?') {
-            jeu.cartes[compteur].nb_points = 15;
-        }
-    }
+        }       }
     melangerJeuDeCarte(jeu);
     int i = 0;
     for (; i < nombreDeCarte; ++i)
@@ -62,5 +60,23 @@ void initialiserJeuDeCarte(jeuDeCarte& jeu) {
 }
 
 void detruireJeuDeCarte(jeuDeCarte& jeu){
-    delete jeu.cartes;
+    delete [] jeu.cartes;
+}
+
+void recupererJeuDeCarteRestant(jeuDeCarte& jeu, unsigned int nombreDeJoeursEnLice){
+    jeuDeCarte jeutmp;
+    unsigned int indiceDebutDuJeuInitial = nombreDeJoeursEnLice*10;
+    unsigned int nombreDeCartesRestant = nombreDeCarte - indiceDebutDuJeuInitial;
+    jeutmp.cartes = new Carte[nombreDeCartesRestant];
+    jeutmp.capacite = nombreDeCartesRestant;
+    for (int compteur=0; indiceDebutDuJeuInitial < nombreDeCarte; compteur++){
+        jeutmp.cartes[compteur] = jeu.cartes[indiceDebutDuJeuInitial];
+        indiceDebutDuJeuInitial++;
+    }
+    detruireJeuDeCarte(jeu);
+    jeu.cartes = new Carte[nombreDeCartesRestant];
+    for (int compteur = 0; compteur < nombreDeCartesRestant; compteur++){
+        jeu.cartes[compteur] = jeutmp.cartes[compteur];
+    }
+    jeu.capacite = jeutmp.capacite;
 }

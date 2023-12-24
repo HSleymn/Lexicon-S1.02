@@ -13,10 +13,12 @@ struct Carte{
 
 struct jeuDeCarte{
     Carte* cartes;
+    unsigned int capacite;
 };
 void initialiserJeuDeCarte(jeuDeCarte& jeu);
 void melangerJeuDeCarte(jeuDeCarte& jeu);
-
+void detruireJeuDeCarte(jeuDeCarte& jeu);
+void recupererJeuDeCarteRestant(jeuDeCarte& jeu, unsigned int nombreDeJoeursEnLice);
 
 
 #endif //LEXICONPP_CARTE_H

@@ -5,10 +5,17 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(Lexiconpp
         pile.cpp
-        pile.h
+
         carte.cpp
-        carte.h
+
+        talon.cpp
+
+        exposes.cpp
+
+
         joueur.cpp
-        joueur.h
+
         main.cpp
-        lettres.h)
+
+        talonEtExposee.cpp
+        )

@@ -12,6 +12,7 @@
  *
  * */
 void initialiserLaMainDuJoueur(Joueur& joueur, const jeuDeCarte jeuMelange){
+    joueur.nombreDeCartesEnMain = nombreDeCarteJoueur;
     for (int compteur = 0; compteur < nombreDeCarteJoueur; ++compteur){
         joueur.mainDuJoueur[compteur] = jeuMelange.cartes[compteur];
     }
@@ -31,7 +32,7 @@ void initialiserLesJoueurs(Joueurs& lesJoueurs, const unsigned int nombreDeJoueu
             ++indiceCarte;
         }
         initialiserLaMainDuJoueur(lesJoueurs.tabJoueurs[compteur], jeutmp);
-        delete [] jeutmp.cartes;
+        detruireJeuDeCarte(jeutmp);
 
     }
 };

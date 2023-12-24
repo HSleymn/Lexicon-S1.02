@@ -10,10 +10,10 @@
 struct Pile {
     unsigned int capacite;  // capacité de la pile (c>0)
     Carte* tab;				// tableau des éléments de pile en mémoire dynamique
-    int sommet;				// indice de sommet de pile dans tab
+    int sommet;				// indice de indiceSommet de pile dans tab
 
 };
-void initialiser(Pile& p, unsigned int c);{
+void initialiser(Pile& Pile_Exposee, unsigned int c);
 
 
 #endif //LEXICONPP_PILE_H

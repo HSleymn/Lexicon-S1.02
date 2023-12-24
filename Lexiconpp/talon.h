@@ -1,51 +1,22 @@
 #ifndef LEXICONPP_TALON_H
 #define LEXICONPP_TALON_H
+#include "carte.h"
 
-
-struct Talon {
-    unsigned int capacite;  
+struct Pile_Talon {
+    int capacite;
     Carte* tab;		
-    int sommet;			
+    int indiceSommet;
 
 };
 
-void initialiser(Talon& t, unsigned int c );{
+void initialiser(Pile_Talon& pileDuTalon, const unsigned int nombreDeCarteRestant);
 
-        for (int i = 0; i < taille; ++i)
-    empiler(t, m[i]);
-        for (int i = 0; i < taille; ++i) {
-     m[i] = sommet(t);
-    depiler(t);
-     }
-    detruire(t);
-}
+bool estVide(const Pile_Talon& pileDuTalon);
 
+void empiler(Pile_Talon& pileDuTalon, const Carte& carte);
 
-bool estVide(const Talon& t);{
-    T  = 0;
-    std::stack<T> temp = elements;  // Utilise une copie pour ne pas modifier la pile originale
-        while (!temp.empty()) {
-            somme += temp.top();
-            temp.pop();
-}
+void depiler(Pile_Talon& pileDuTalon);
 
-void empiler(Talon& t, const Carte& Ca);{
-
-    assert(!estPleine(p));
-	t.elems[++t.sommet] = Ca;
-}
-}
-
-void depiler(Talon& t){
-
-    assert(!estVide(t));
-	int v = t.elems[t.sommet--];
-	return v;
-
-
-
-}
-
-
+#endif
 
 

@@ -16,7 +16,7 @@ bool estVide(const Pile_Talon& pileDuTalon){
 }
 
 bool estPlein(const Pile_Talon& pileDuTalon){
-    return pileDuTalon.indiceSommet >= pileDuTalon.capacite;
+    return pileDuTalon.indiceSommet == pileDuTalon.capacite;
 }
 
 void empiler(Pile_Talon& pileDuTalon, const Carte& carte){

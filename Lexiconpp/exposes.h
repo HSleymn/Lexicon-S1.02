@@ -4,9 +4,9 @@
 
 
 struct Pile_Exposee{
-    unsigned int capacite;  
+    int capacite;
     Carte* tab;		
-    int sommet;			
+    int sommet;
 
 };
 void initialiser(Pile_Exposee& pileDesCartesExposees, const unsigned int nombreDeCarteRestant );

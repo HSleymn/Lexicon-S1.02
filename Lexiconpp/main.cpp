@@ -54,6 +54,7 @@ int main(int argc, char** argv)
         std::cout << pileDuTalon.tab[compteur].lettre;
     }
         std::cout << std::endl;
+        empiler(pileCartesExposee, pileDuTalon.tab[pileDuTalon.indiceSommet]);
         depiler(pileDuTalon);
 
     }

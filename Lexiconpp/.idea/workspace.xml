@@ -21,32 +21,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc528735-bc43-4184-9585-15303c8cbca0" name="Changes" comment="Implémentation des joueurs">
-      <change afterPath="$PROJECT_DIR$/talonEtExposee.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/talonEtExposee.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carte.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/carte.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carte.h" beforeDir="false" afterPath="$PROJECT_DIR$/carte.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-7b161e1c7030e3c9c2b5.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2023-12-17T09-52-00-0451.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-Lexiconpp-Debug-1cc314cbdd35dfdbe25a.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lexiconpp.dir/carte.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lexiconpp.dir/carte.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lexiconpp.dir/joueur.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lexiconpp.dir/joueur.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lexiconpp.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lexiconpp.dir/main.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Lexiconpp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Lexiconpp.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exposes.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/exposes.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exposes.h" beforeDir="false" afterPath="$PROJECT_DIR$/exposes.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/joueur.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/joueur.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/joueur.h" beforeDir="false" afterPath="$PROJECT_DIR$/joueur.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pile.h" beforeDir="false" afterPath="$PROJECT_DIR$/pile.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/talon.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/talon.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/talon.h" beforeDir="false" afterPath="$PROJECT_DIR$/talon.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/talonEtExposee.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/talonEtExposee.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,6 +139,7 @@
       <workItem from="1703387735754" duration="6880000" />
       <workItem from="1703404587092" duration="1111000" />
       <workItem from="1703406660907" duration="826000" />
+      <workItem from="1703424720227" duration="1869000" />
     </task>
     <task id="LOCAL-00001" summary="Implémentation des joueurs">
       <option name="closed" value="true" />

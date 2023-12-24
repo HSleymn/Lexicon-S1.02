@@ -20,7 +20,7 @@ void remplirTalonEtExposee(Pile_Talon& pileDuTalon, Pile_Exposee& pileExposee, j
 
     detruireJeuDeCarte(jeuDeCartes);
 
-    empiler(pileExposee, pileDuTalon.tab[pileDuTalon.indiceSommet]);
+    empiler(pileExposee, pileDuTalon.tab[pileDuTalon.indiceSommet-1]);
     depiler(pileDuTalon);
 }
 

@@ -13,11 +13,11 @@ void initialiser(Pile_Exposee& pileDesCartesExposees, const unsigned int nombreD
 }
 
 bool estVide(const Pile_Exposee& pileDesCartesExposees){
-    return pileDesCartesExposees.capacite == 0;
+    return pileDesCartesExposees.sommet == -1;
 }
 
 bool estPlein(const Pile_Exposee& pileDesCartesExposees){
-    return pileDesCartesExposees.sommet < pileDesCartesExposees.capacite-1;
+    return pileDesCartesExposees.sommet >= pileDesCartesExposees.capacite;
 }
 
 void empiler(Pile_Exposee& pileDesCartesExposees, const Carte& carte){

@@ -27,22 +27,24 @@ int main(int argc, char** argv)
 
     recupererJeuDeCarteRestant(jeuDeCartes, joueurs.nbJoueursEnLice);
 
-    Pile_Talon pileDuTalon;
+    Pile pileDuTalon;
     initialiser(pileDuTalon, jeuDeCartes.capacite);
 
-    Pile_Exposee pileCartesExposee;
+    Pile pileCartesExposee;
     initialiser(pileCartesExposee, jeuDeCartes.capacite);
 
     remplirTalonEtExposee(pileDuTalon, pileCartesExposee, jeuDeCartes);
 
+    for (int compteur=0; compteur < pileDuTalon.capacite; compteur++){
+        std::cout << pileDuTalon.tab[compteur].lettre;
+    }
+    std::cout << std::endl << pileCartesExposee.tab[pileCartesExposee.sommet].lettre;
     //affichage
 
     while(joueurs.nbJoueursEnLice > 1){
 
         for (int tourDuJoueur = 0; tourDuJoueur < joueurs.nbJoueursEnLice; tourDuJoueur++) {
-            if (estVide(pileDuTalon)){
-                rechargementDuTalon(pileDuTalon, pileCartesExposee);
-            }
+
             std::cout << "* Joueur" << joueurs.tabJoueurs[tourDuJoueur].idJoueur << "(" << pileCartesExposee.tab[pileCartesExposee.sommet].lettre << ") ";
         for (int compteur =0; compteur < joueurs.tabJoueurs[tourDuJoueur].nombreDeCartesEnMain; compteur ++){
             std::cout << joueurs.tabJoueurs[tourDuJoueur].mainDuJoueur[compteur].lettre;
@@ -50,12 +52,13 @@ int main(int argc, char** argv)
         std::cout << std::endl << "> ";
         std::cout << std::endl;
     }
-    for(int compteur = 0 ; compteur < pileDuTalon.capacite; compteur++){
-        std::cout << pileDuTalon.tab[compteur].lettre;
-    }
         std::cout << std::endl;
-        empiler(pileCartesExposee, pileDuTalon.tab[pileDuTalon.indiceSommet]);
+        empiler(pileCartesExposee, pileDuTalon.tab[pileDuTalon.sommet]);
+
         depiler(pileDuTalon);
+        if (estVide(pileDuTalon)){
+            rechargementDuTalon(pileDuTalon, pileCartesExposee);
+        }
 
     }
     }

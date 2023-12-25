@@ -12,7 +12,7 @@
 
 void melangerJeuDeCarte(jeuDeCarte& jeu) {
     Carte carteIntermediaire;
-    unsigned int nombreDeCarteAMelanger = nombreDeCarte-1;
+    unsigned int nombreDeCarteAMelanger = jeu.capacite-1;
 
     do {
         srand(time(0));

@@ -70,9 +70,7 @@
 				1,
 				2,
 				3,
-				4,
-				5,
-				6
+				4
 			]
 		}
 	],
@@ -113,9 +111,7 @@
 				1,
 				2,
 				3,
-				4,
-				5,
-				6
+				4
 			]
 		}
 	],
@@ -125,12 +121,6 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "carte.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "exposes.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -149,12 +139,6 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "pile.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "talon.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

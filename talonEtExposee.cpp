@@ -3,28 +3,24 @@
 //
 
 #include "talonEtExposee.h"
-
 #include <iostream>
 
 
 
-void remplirTalonEtExposee(Pile_Talon& pileDuTalon, Pile_Exposee& pileExposee, jeuDeCarte& jeuDeCartes){
+void remplirTalonEtExposee(Pile& pileDuTalon, Pile& pileExposee, jeuDeCarte& jeuDeCartes){
 
-    for (int compteur=0; compteur < pileDuTalon.capacite; compteur ++){
-        std::cout << "caca" << std::endl;
-        std::cout << pileDuTalon.indiceSommet << std::endl;
-        std::cout << "cacaprout" << std::endl;
+    for (int compteur=0; compteur < pileDuTalon.capacite; compteur++){
+
         empiler(pileDuTalon, jeuDeCartes.cartes[compteur]);
-        std::cout << "cacahuete";
     }
 
     detruireJeuDeCarte(jeuDeCartes);
 
-    empiler(pileExposee, pileDuTalon.tab[pileDuTalon.indiceSommet-1]);
+    empiler(pileExposee, pileDuTalon.tab[pileDuTalon.sommet]);
     depiler(pileDuTalon);
 }
 
-void rechargementDuTalon(Pile_Talon& pileDuTalon, Pile_Exposee& pileExposee){
+void rechargementDuTalon(Pile& pileDuTalon, Pile& pileExposee){
     jeuDeCarte jeutmp;
     jeutmp.capacite = pileExposee.capacite;
     jeutmp.cartes = new Carte[pileExposee.capacite];
@@ -33,5 +29,7 @@ void rechargementDuTalon(Pile_Talon& pileDuTalon, Pile_Exposee& pileExposee){
         depiler(pileExposee);
     }
     melangerJeuDeCarte(jeutmp);
+
     remplirTalonEtExposee(pileDuTalon, pileExposee, jeutmp);
+
 }

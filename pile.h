@@ -7,13 +7,21 @@
 
 #include "carte.h"
 
-struct Pile {
-    unsigned int capacite;  // capacité de la pile (c>0)
+struct Pile{
+    int capacite;  // capacité de la pile (c>0)
     Carte* tab;				// tableau des éléments de pile en mémoire dynamique
     int sommet;				// indice de indiceSommet de pile dans tab
 
 };
-void initialiser(Pile& Pile_Exposee, unsigned int c);
+void initialiser(Pile& pileDeCartes, const unsigned int nombreDeCarteRestant );
+
+bool estVide(const Pile& pileDeCartes);
+
+bool estPlein(const Pile& pileDeCartes);
+
+void empiler(Pile& pileDeCartes, const Carte& carte);
+
+void depiler(Pile& pileDeCartes);
 
 
 #endif //LEXICONPP_PILE_H

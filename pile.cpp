@@ -4,7 +4,6 @@
 #include "pile.h"
 
 #include <iostream>
-#include "carte.h"
 #include <cassert>
 
 void initialiser(Pile& pileDeCartes, const unsigned int nombreDeCarteRestant ){

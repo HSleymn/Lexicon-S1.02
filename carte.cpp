@@ -3,9 +3,7 @@
 //
 #include <iostream>
 #include "ctime"
-#include <cstring>
 #include "carte.h"
-#include "lettres.h"
 
 
 #define nombreDeCarte 51
@@ -25,6 +23,33 @@ void melangerJeuDeCarte(jeuDeCarte& jeu) {
 }
 
 void initialiserJeuDeCarte(jeuDeCarte& jeu) {
+    char tableauDeLettres[51]= {  'A', 'A',
+                                  'B', 'B',
+                                  'C','C',
+                                  'D','D',
+                                  'E','E','E','E','E',
+                                  'F',
+                                  'G','G',
+                                  'H','H',
+                                  'I','I','I','I',
+                                  'J',
+                                  'K',
+                                  'L','L',
+                                  'M',
+                                  'N','N','N',
+                                  'O','O',
+                                  'P',
+                                  'Q',
+                                  'R','R','R',
+                                  'S','S','S',
+                                  'T','T','T',
+                                  'U','U','U',
+                                  'V',
+                                  'W',
+                                  'X',
+                                  'Y',
+                                  'Z',
+    };
 
     jeu.cartes = new Carte[nombreDeCarte];
     jeu.capacite = nombreDeCarte;
@@ -51,12 +76,6 @@ void initialiserJeuDeCarte(jeuDeCarte& jeu) {
             jeu.cartes[compteur].nb_points = 2;
         }       }
     melangerJeuDeCarte(jeu);
-    int i = 0;
-    for (; i < nombreDeCarte; ++i)
-        std::cout << "La carte avec comme lettre " << jeu.cartes[i].lettre << " vaut " << jeu.cartes[i].nb_points
-                  << std::endl << std::endl;
-
-    std::cout << i;
 }
 
 void detruireJeuDeCarte(jeuDeCarte& jeu){

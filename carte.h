@@ -6,6 +6,9 @@
 #define LEXICONPP_CARTE_H
 #define nombreDeCarte 51
 
+
+
+
 struct Carte{
     unsigned int nb_points;
     char lettre;

@@ -5,7 +5,7 @@
 #ifndef LEXICONPP_PILE_H
 #define LEXICONPP_PILE_H
 
-#include "carte.h"
+#include "joueur.h"
 
 struct Pile{
     int capacite;  // capacité de la pile (c>0)

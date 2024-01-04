@@ -6,8 +6,11 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(.)
 
 add_executable(Lexicon_S1_02
+        main.cpp
         carte.cpp
         joueur.cpp
-        main.cpp
         pile.cpp
-        talonEtExposee.cpp)
+        talonEtExposee.cpp
+        commandes.cpp
+        mots.cpp
+        )

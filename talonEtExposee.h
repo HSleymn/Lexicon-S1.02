@@ -4,8 +4,7 @@
 
 #ifndef LEXICONPP_TALONETEXPOSEE_H
 #define LEXICONPP_TALONETEXPOSEE_H
-#include "pile.h"
-#include "carte.h"
+#include "commandes.h"
 
 void remplirTalonEtExposee(Pile& pileDuTalon, Pile& pileExposee, jeuDeCarte& jeuDeCartes);
 

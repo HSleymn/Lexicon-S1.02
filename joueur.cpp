@@ -11,32 +11,25 @@
  * @media
  *
  * */
-void initialiserLaMainDuJoueur(Joueur& joueur, const jeuDeCarte jeuMelange){
+void initialiserLaMainDuJoueur(Joueur& joueur, const jeuDeCarte jeuMelange, unsigned int& compteur) {
     joueur.nombreDeCartesEnMain = nombreDeCarteJoueur;
-    for (int compteur = 0; compteur < nombreDeCarteJoueur; ++compteur){
-        joueur.mainDuJoueur[compteur] = jeuMelange.cartes[compteur];
+    unsigned int indiceCarte = compteur * 10;
+    for (int compteurCartes = 0; compteurCartes < nombreDeCarteJoueur; ++compteurCartes) {
+        joueur.mainDuJoueur[compteurCartes] = jeuMelange.cartes[indiceCarte];
+        indiceCarte++;
     }
 }
-
 void initialiserLesJoueurs(Joueurs& lesJoueurs, const unsigned int nombreDeJoueurs, jeuDeCarte jeuMelange){
     lesJoueurs.nbJoueursTotal = lesJoueurs.nbJoueursEnLice = nombreDeJoueurs;
     lesJoueurs.tabJoueurs = new Joueur[nombreDeJoueurs];
-    jeuDeCarte jeutmp;
-    for (int compteur=0; compteur < nombreDeJoueurs; ++compteur){
+    lesJoueurs.tabJoueursElimines = new Joueur[nombreDeJoueurs-1];
+    lesJoueurs.nbJoueurElimines = 0;
+    for (unsigned int compteur=0; compteur < nombreDeJoueurs; ++compteur){
         lesJoueurs.tabJoueurs[compteur].idJoueur = compteur +1;
         lesJoueurs.tabJoueurs[compteur].nombreDePoints =0;
-        jeutmp.cartes  = new Carte[nombreDeCarteJoueur];
-        unsigned int indiceCarte = compteur*10;
-        for (int carteCompteur=0; carteCompteur < nombreDeCarteJoueur; carteCompteur++ ){
-            jeutmp.cartes[carteCompteur] = jeuMelange.cartes[indiceCarte];
-            ++indiceCarte;
-        }
-        initialiserLaMainDuJoueur(lesJoueurs.tabJoueurs[compteur], jeutmp);
-        detruireJeuDeCarte(jeutmp);
-
+        initialiserLaMainDuJoueur(lesJoueurs.tabJoueurs[compteur], jeuMelange, compteur);
     }
 }
-
 int rechercherDansLaMainDuJoueur(const Joueur& joueur, const char& lettre){
     for (int compteur =0; compteur < joueur.nombreDeCartesEnMain; compteur++){
         if (joueur.mainDuJoueur[compteur].lettre == lettre){
@@ -53,7 +46,6 @@ bool rechercherIndice(int& indice,int* tableauIndice, int& tailleTableau){
     }
     return false;
 }
-
 int rechercherDansLaMainDuJoueurDoublons(const Joueur& joueur, const char& lettre, int* tableauIndice, int& tailleTableau){
     for (int compteur =0; compteur < joueur.nombreDeCartesEnMain; compteur++){
         if (joueur.mainDuJoueur[compteur].lettre == lettre && !rechercherIndice(compteur, tableauIndice, tailleTableau)){
@@ -62,8 +54,6 @@ int rechercherDansLaMainDuJoueurDoublons(const Joueur& joueur, const char& lettr
     }
     return -1;
 }
-
-
 bool verifierDansLesCartesDeLaMainDuJoueur(Joueur& joueur, Mot& mot, int* tableauIndice, int& tailleTableau){
     int pdc;
     int indiceLettre;
@@ -82,7 +72,6 @@ bool verifierDansLesCartesDeLaMainDuJoueur(Joueur& joueur, Mot& mot, int* tablea
     else
         return false;
 }
-
 void retirerDansLesCartesDeLaMainDuJoueur(Joueur& joueur, Mot& mot, int* tableauIndice, int& tailleTableau){
     jeuDeCarte jeutmp;
     jeutmp.cartes = new Carte[joueur.nombreDeCartesEnMain-mot.taille];
@@ -102,5 +91,36 @@ void retirerDansLesCartesDeLaMainDuJoueur(Joueur& joueur, Mot& mot, int* tableau
         joueur.mainDuJoueur[compteur] = jeutmp.cartes[compteur];
     }
     joueur.nombreDeCartesEnMain = jeutmp.capacite;
+
+}
+bool verificationJoueurAEncoreDesCartes(Joueur& joueur){
+    if(joueur.nombreDeCartesEnMain == 0)
+        return false;
+
+    else
+        return true;
+}
+bool verificationJoueurEnLice(Joueurs& lesJoueurs, Joueur& joueur){
+    for(int compteur=0; compteur < lesJoueurs.nbJoueurElimines; compteur++){
+        if(lesJoueurs.tabJoueursElimines[compteur].idJoueur == joueur.idJoueur)
+            return false;
+    }
+    return true;
+}
+void ajoutPointsFinDeTour(Joueurs& lesJoueurs){
+    for(int compteurJoueur=0; compteurJoueur < lesJoueurs.nbJoueursTotal; compteurJoueur++){
+        if(verificationJoueurEnLice(lesJoueurs, lesJoueurs.tabJoueurs[compteurJoueur])){
+            for(int compteurCartes = 0; compteurCartes < lesJoueurs.tabJoueurs[compteurJoueur].nombreDeCartesEnMain; compteurCartes++){
+                lesJoueurs.tabJoueurs[compteurJoueur].nombreDePoints += lesJoueurs.tabJoueurs[compteurJoueur].mainDuJoueur[compteurCartes].nb_points;
+            }
+        }
+    }
+}
+void eliminationJoueur(Joueurs& lesJoueurs, Joueur& joueur){
+    if(verificationJoueurEnLice(lesJoueurs, joueur)) {
+        lesJoueurs.nbJoueursEnLice--;
+        lesJoueurs.tabJoueursElimines[lesJoueurs.nbJoueurElimines] = joueur;
+        lesJoueurs.nbJoueurElimines++;
+    }
 
 }

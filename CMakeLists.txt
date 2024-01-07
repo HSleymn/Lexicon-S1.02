@@ -13,4 +13,5 @@ add_executable(Lexicon_S1_02
         talonEtExposee.cpp
         commandes.cpp
         mots.cpp
-        )
+        main.h
+)

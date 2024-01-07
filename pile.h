@@ -23,5 +23,6 @@ void empiler(Pile& pileDeCartes, const Carte& carte);
 
 void depiler(Pile& pileDeCartes);
 
+void detruire(Pile& pile);
 
 #endif //LEXICONPP_PILE_H

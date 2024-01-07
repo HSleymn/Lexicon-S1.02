@@ -31,3 +31,6 @@ void depiler(Pile& pileDesCartesExposees){
     assert(!estVide(pileDesCartesExposees));
     pileDesCartesExposees.sommet--;
 }
+void detruire(Pile& pile){
+    delete [] pile.tab;
+}

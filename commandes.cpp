@@ -133,6 +133,7 @@ int commandeP(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, Com
     ajouterMot(tabMots,mots);
     return ENTREE_VALIDE;
 }
+
 int detectionDeLaCommandeR(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, Commande& commande, std::istringstream& is){
     if (commande.nomDeLaCommande != 'R'){
         return ENTREE_INVALIDE;
@@ -155,7 +156,7 @@ int commandeR(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, Com
     }
 
     if(!ecrire(mots, is)){
-        return MOT_INVALIDE ;
+        return ENTREE_INVALIDE ;
     }
     Mot mottmp;
     mottmp.word = new char[mots.taille+1];
@@ -217,7 +218,7 @@ int commandeC(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, Com
     }
 
     if(!ecrire(mots, is)){
-        return MOT_INVALIDE ;
+        return ENTREE_INVALIDE ;
     }
     Mot mottmp;
     mottmp.word = new char[mots.taille+1];
@@ -231,20 +232,27 @@ int commandeC(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, Com
 
     int tableauIndice[mots.taille];
     int tailleTableau=0;
-    for (int compteurTailleMot=0; compteurTailleMot<mots.taille; compteurTailleMot++){
-        if(!comparerLettres(mots.word[compteurTailleMot], motDesigne.word[compteurTailleMot])){
-            int answerRecherche=rechercherDansLaMainDuJoueurDoublons(joueur, mots.word[compteurTailleMot], tableauIndice, tailleTableau);
+    int compteurMotInitial=0;
+    for (int compteurMotDuJoueur=0; compteurMotDuJoueur < mots.taille; compteurMotDuJoueur++){
+        if(!comparerLettres(mots.word[compteurMotDuJoueur], motDesigne.word[compteurMotInitial])){
+            //mettre deux compteurs
+            int answerRecherche=rechercherDansLaMainDuJoueurDoublons(joueur, mots.word[compteurMotDuJoueur], tableauIndice, tailleTableau);
             if( answerRecherche == -1){
                 return ENTREE_INVALIDE;
             }
             else{
-                mottmp.word[tailleTableau] = mots.word[compteurTailleMot];
+                mottmp.word[tailleTableau] = mots.word[compteurMotDuJoueur];
                 tableauIndice[tailleTableau] = answerRecherche;
                 tailleTableau++;
             }
         }
+        else{
+            compteurMotInitial++;
+
+        }
     }
     mottmp.taille = tailleTableau;
+    std::cout << "le tableau vaut " << tailleTableau;
     if(tailleTableau==0){
         return ENTREE_INVALIDE;
     }

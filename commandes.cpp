@@ -148,7 +148,9 @@ int commandeR(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, Com
     initialiser(mots, 1, 1);
 
     is>>commande.designationMot;
-
+    if(is.peek() != ' '){
+        return ENTREE_INVALIDE;
+    }
     std::cout << commande.designationMot;
     std::cout << tabMots.indiceDernierMot << std::endl;
     if(commande.designationMot-1 > tabMots.indiceDernierMot){
@@ -210,6 +212,9 @@ int commandeC(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, Com
     initialiser(mots, 1, 1);
 
     is>>commande.designationMot;
+    if(is.peek() != ' '){
+        return ENTREE_INVALIDE;
+    }
 
     std::cout << commande.designationMot;
     std::cout << tabMots.indiceDernierMot << std::endl;
@@ -252,8 +257,10 @@ int commandeC(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, Com
         }
     }
     mottmp.taille = tailleTableau;
-    std::cout << "le tableau vaut " << tailleTableau;
-    if(tailleTableau==0){
+    std::cout << "compteur mot initial " << compteurMotInitial;
+    std::cout << " taille mot initial "<< motDesigne.taille;
+    std::cout << " le tableau vaut " << tailleTableau;
+    if(compteurMotInitial!= motDesigne.taille){
         return ENTREE_INVALIDE;
     }
 

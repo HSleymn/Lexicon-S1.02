@@ -70,7 +70,6 @@ int LectureCommande(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposee
     is >> std::ws;
     is.getline(input, 64);
     std::istringstream stream(input);
-    char c;
     stream >> commande.nomDeLaCommande;
     if (stream.peek() != ' ') {
         return ENTREE_INVALIDE;
@@ -242,8 +241,7 @@ int commandeR(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, Com
     if(is.peek() != ' '){
         return ENTREE_INVALIDE;
     }
-    std::cout << commande.designationMot;
-    std::cout << tabMots.indiceDernierMot << std::endl;
+
     if(commande.designationMot-1 > tabMots.indiceDernierMot){
         return ENTREE_INVALIDE;
     }
@@ -342,8 +340,6 @@ int commandeC(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, Com
         return ENTREE_INVALIDE;
     }
 
-    std::cout << commande.designationMot;
-    std::cout << tabMots.indiceDernierMot << std::endl;
     if(commande.designationMot-1 > tabMots.indiceDernierMot){
         return ENTREE_INVALIDE;
     }
@@ -388,9 +384,7 @@ int commandeC(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, Com
         }
     }
     mottmp.taille = tailleTableau;
-    std::cout << "compteur mot initial " << compteurMotInitial;
-    std::cout << " taille mot initial "<< motDesigne.taille;
-    std::cout << " le tableau vaut " << tailleTableau;
+
     if(compteurMotInitial!= motDesigne.taille){
         return ENTREE_INVALIDE;
     }

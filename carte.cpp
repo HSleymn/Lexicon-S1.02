@@ -55,26 +55,8 @@ void initialiserJeuDeCarte(jeuDeCarte& jeu) {
     jeu.capacite = nombreDeCarte;
     for (int compteur = 0; compteur < nombreDeCarte; ++compteur) {
         jeu.cartes[compteur].lettre = tableauDeLettres[compteur];
-        if (jeu.cartes[compteur].lettre == 'A' || jeu.cartes[compteur].lettre == 'E' ||
-            jeu.cartes[compteur].lettre == 'I') {
-            jeu.cartes[compteur].nb_points = 10;
-        } else if (jeu.cartes[compteur].lettre == 'C' || jeu.cartes[compteur].lettre == 'H' ||
-                   jeu.cartes[compteur].lettre == 'K' || jeu.cartes[compteur].lettre == 'M' ||
-                   jeu.cartes[compteur].lettre == 'L' || jeu.cartes[compteur].lettre == 'P' ||
-                   jeu.cartes[compteur].lettre == 'N' || jeu.cartes[compteur].lettre == 'T' ||
-                   jeu.cartes[compteur].lettre == 'O' || jeu.cartes[compteur].lettre == 'W' ||
-                   jeu.cartes[compteur].lettre == 'R' || jeu.cartes[compteur].lettre == 'S' ||
-                   jeu.cartes[compteur].lettre == 'U' || jeu.cartes[compteur].lettre == 'V'  ) {
-            jeu.cartes[compteur].nb_points = 8;
-        } else if (jeu.cartes[compteur].lettre == 'D' || jeu.cartes[compteur].lettre == 'J') {
-            jeu.cartes[compteur].nb_points = 6;
-        } else if (jeu.cartes[compteur].lettre == 'G' || jeu.cartes[compteur].lettre == 'Q' ||
-                   jeu.cartes[compteur].lettre == 'Y') {
-            jeu.cartes[compteur].nb_points = 4;
-        } else if (jeu.cartes[compteur].lettre == 'B' || jeu.cartes[compteur].lettre == 'F' ||
-                   jeu.cartes[compteur].lettre == 'X' || jeu.cartes[compteur].lettre == 'Z') {
-            jeu.cartes[compteur].nb_points = 2;
-        }       }
+        ajouterPointsPourCartes(jeu.cartes[compteur]);
+               }
     melangerJeuDeCarte(jeu);
 }
 
@@ -99,3 +81,24 @@ void recupererJeuDeCarteRestant(jeuDeCarte& jeu, unsigned int nombreDeJoeursEnLi
     }
     jeu.capacite = jeutmp.capacite;
 }
+
+void ajouterPointsPourCartes(Carte& cartes){
+    if (cartes.lettre == 'A' || cartes.lettre == 'E' || cartes.lettre == 'I') {
+            cartes.nb_points = 10;
+        } else if (cartes.lettre == 'C' || cartes.lettre == 'H' ||
+                   cartes.lettre == 'K' || cartes.lettre == 'M' ||
+                   cartes.lettre == 'L' || cartes.lettre == 'P' ||
+                   cartes.lettre == 'N' || cartes.lettre == 'T' ||
+                   cartes.lettre == 'O' || cartes.lettre == 'W' ||
+                   cartes.lettre == 'R' || cartes.lettre == 'S' ||
+                   cartes.lettre == 'U' || cartes.lettre == 'V'  ) {
+            cartes.nb_points = 8;
+        } else if (cartes.lettre == 'D' || cartes.lettre == 'J') {
+            cartes.nb_points = 6;
+        } else if (cartes.lettre == 'G' || cartes.lettre == 'Q' ||
+                   cartes.lettre == 'Y') {
+            cartes.nb_points = 4;
+        } else if (cartes.lettre == 'B' || cartes.lettre == 'F' ||
+                   cartes.lettre == 'X' || cartes.lettre == 'Z') {
+            cartes.nb_points = 2;
+        }       }

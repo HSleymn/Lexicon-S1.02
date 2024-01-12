@@ -51,7 +51,7 @@ int main(int argc, char** argv)
 
                 //gesttion de l'entrée du joueur
                 while(pointDeControle != ENTREE_VALIDE && pointDeControle != MOT_INVALIDE){
-                    std::cout << ">";
+                    std::cout << "> ";
                     resultatEntree = LectureCommande(joueurs.tabJoueurs[tourDuJoueur], pileDuTalon, pileCartesExposee,commande, std::cin, tableauDeMot);
                     if (resultatEntree == ENTREE_VALIDE)
                         pointDeControle = ENTREE_VALIDE;
@@ -71,6 +71,9 @@ int main(int argc, char** argv)
                     if(tourDuJoueurDebut >= joueurs.nbJoueursTotal){
                         tourDuJoueurDebut=0;
                     }
+                    tourApresDebut = tourDuJoueurDebut;
+                    break;
+
                 }
             }
         }

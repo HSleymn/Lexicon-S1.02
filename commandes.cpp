@@ -115,10 +115,17 @@ int detectionDeLaCommandeP(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartes
 int commandeP(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, Commande& commande, std::istringstream& is, TabMots& tabMots){
     Mot mots;
     initialiser(mots, 1, 1);
-
-
-    if(!ecrire(mots, is)){
+    int resultatEcriture;
+    resultatEcriture = ecrire(mots, is);
+    if(resultatEcriture == 0){
+        return ENTREE_INVALIDE ;
+    }
+    else if(resultatEcriture == 1){
         return MOT_INVALIDE ;
+    }
+    char test;
+    if(is >> test){
+        return ENTREE_INVALIDE;
     }
     int tableauIndice[mots.taille];
     int tailleTableau=0;
@@ -157,8 +164,13 @@ int commandeR(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, Com
         return ENTREE_INVALIDE;
     }
 
-    if(!ecrire(mots, is)){
+    int resultatEcriture;
+    resultatEcriture = ecrire(mots, is);
+    if(resultatEcriture == 0){
         return ENTREE_INVALIDE ;
+    }
+    else if(resultatEcriture == 1){
+        return MOT_INVALIDE ;
     }
     Mot mottmp;
     mottmp.word = new char[mots.taille+1];
@@ -169,6 +181,7 @@ int commandeR(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, Com
         return ENTREE_INVALIDE;
     }
     int tableauIndice[mots.taille];
+    int tableauIndiceMot[mots.taille];
     int tailleTableau=0;
     for (int compteurTailleMot=0; compteurTailleMot<mots.taille; compteurTailleMot++){
         if(!comparerLettres(mots.word[compteurTailleMot], motDesigne.word[compteurTailleMot])){
@@ -179,6 +192,7 @@ int commandeR(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, Com
             else{
                 mottmp.word[tailleTableau] = mots.word[compteurTailleMot];
                 tableauIndice[tailleTableau] = answerRecherche;
+                tableauIndiceMot[tailleTableau] = compteurTailleMot;
                 tailleTableau++;
             }
         }
@@ -192,7 +206,14 @@ int commandeR(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, Com
         return MOT_INVALIDE ;
     }
 
-    retirerDansLesCartesDeLaMainDuJoueur(joueur, mottmp, tableauIndice, tailleTableau);
+    Carte carteTmp;
+    for(int compteur=0; compteur<tailleTableau;compteur++){
+        carteTmp = joueur.mainDuJoueur[tableauIndice[compteur]];
+        joueur.mainDuJoueur[tableauIndice[compteur]].lettre = motDesigne.word[tableauIndiceMot[compteur]];
+        ajouterPointsPourCartes(joueur.mainDuJoueur[tableauIndice[compteur]]);
+        motDesigne.word[tableauIndiceMot[compteur]] = carteTmp.lettre;
+    }
+
     delete [] mottmp.word;
     miseAJourMots(tabMots, mots, commande.designationMot-1);
     return ENTREE_VALIDE;
@@ -222,8 +243,13 @@ int commandeC(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, Com
         return ENTREE_INVALIDE;
     }
 
-    if(!ecrire(mots, is)){
+    int resultatEcriture;
+    resultatEcriture = ecrire(mots, is);
+    if(resultatEcriture == 0){
         return ENTREE_INVALIDE ;
+    }
+    else if(resultatEcriture == 1){
+        return MOT_INVALIDE ;
     }
     Mot mottmp;
     mottmp.word = new char[mots.taille+1];

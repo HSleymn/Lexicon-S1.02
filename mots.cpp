@@ -14,11 +14,10 @@ void detruire(char* mot){
     delete [] mot;
 }
 
-bool ecrire(Mot& leMot, std::istringstream& stream){
+int ecrire(Mot& leMot, std::istringstream& stream){
     char lettre;
     int compteur = 0;
-    stream >> lettre;
-
+if(stream >> lettre && stream.peek() != ' ' ){
     do{
         if(compteur >= leMot.taille){
             char* mottmp;
@@ -40,13 +39,17 @@ bool ecrire(Mot& leMot, std::istringstream& stream){
         ++compteur;
 
 
-    }while (stream.peek() != ' ' && stream >> lettre);
-    if (compteur < 2){
-        return false;
+    }while (stream.peek() != ' ' && stream >> lettre);}
+    if(compteur == 0){
+        return 0;
     }
-    else
+
+    else if (compteur == 1){
+        return 1;
+    }
+    else{
         leMot.word[leMot.taille] = '\0';
-        return true;
+        return 2;}
 }
 
 bool rechercheMotDansLeDictionnaire(Mot& mot){

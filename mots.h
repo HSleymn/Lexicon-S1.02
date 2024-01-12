@@ -27,7 +27,7 @@ struct TabMots{
 
 void initialiser(Mot& leMot, int taille, int pasDExtension);
 void detruire(char* mot);
-bool ecrire(Mot& leMot, std::istringstream& stream);
+int ecrire(Mot& leMot, std::istringstream& stream);
 bool rechercheMotDansLeDictionnaire(Mot& mot);
 void initialiserTableauDeMot(TabMots& tabMots, int taille, int pasExtension);
 void ajouterMot(TabMots& tabMots, Mot& mot);

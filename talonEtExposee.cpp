@@ -8,14 +8,10 @@
 
 
 void remplirTalonEtExposee(Pile& pileDuTalon, Pile& pileExposee, jeuDeCarte& jeuDeCartes){
-
     for (int compteur=0; compteur < pileDuTalon.capacite; compteur++){
-
         empiler(pileDuTalon, jeuDeCartes.cartes[compteur]);
     }
-
     detruireJeuDeCarte(jeuDeCartes);
-
     empiler(pileExposee, pileDuTalon.tab[pileDuTalon.sommet]);
     depiler(pileDuTalon);
 }
@@ -29,7 +25,6 @@ void rechargementDuTalon(Pile& pileDuTalon, Pile& pileExposee){
         depiler(pileExposee);
     }
     melangerJeuDeCarte(jeutmp);
-
     remplirTalonEtExposee(pileDuTalon, pileExposee, jeutmp);
 
 }

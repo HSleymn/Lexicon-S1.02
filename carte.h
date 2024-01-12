@@ -22,6 +22,7 @@ void initialiserJeuDeCarte(jeuDeCarte& jeu);
 void melangerJeuDeCarte(jeuDeCarte& jeu);
 void detruireJeuDeCarte(jeuDeCarte& jeu);
 void recupererJeuDeCarteRestant(jeuDeCarte& jeu, unsigned int nombreDeJoeursEnLice);
+void ajouterPointsPourCartes(Carte& carte);
 
 
 #endif //LEXICONPP_CARTE_H

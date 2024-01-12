@@ -3,7 +3,6 @@
 //
 
 #include "talonEtExposee.h"
-#include <iostream>
 
 
 

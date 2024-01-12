@@ -11,7 +11,6 @@
 #include <cstring>
 
 #include "pile.h"
-#include "mots.h"
 
 #define ETAT_DE_BASE 1
 #define ENTREE_VALIDE 0

@@ -11,6 +11,7 @@
 #include <iomanip> // pour setw
 #include <cstring>
 #include <cassert>
+#include "carte.h"
 struct Mot{
     char* word;
     int taille;

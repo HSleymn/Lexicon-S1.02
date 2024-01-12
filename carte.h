@@ -5,8 +5,8 @@
 #ifndef LEXICONPP_CARTE_H
 #define LEXICONPP_CARTE_H
 #define nombreDeCarte 51
-
-
+#include <iostream>
+#include "ctime"
 
 
 struct Carte{

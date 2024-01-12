@@ -4,7 +4,6 @@
 
 #ifndef LEXICONPP_JOUEUR_H
 #define LEXICONPP_JOUEUR_H
-#include "carte.h"
 #include "mots.h"
 #define nombreDeCarteJoueur 10
 struct Joueur{

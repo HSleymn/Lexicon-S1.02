@@ -6,6 +6,7 @@
 #define LEXICONPP_PILE_H
 
 #include "joueur.h"
+#include <cassert>
 
 struct Pile{
     int capacite;  // capacité de la pile (c>0)

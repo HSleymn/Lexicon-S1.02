@@ -1,12 +1,11 @@
 //
 // Created by PC on 09/12/2023.
 //
-#include <iostream>
-#include "ctime"
+
 #include "carte.h"
 
 
-#define nombreDeCarte 51
+
 
 void melangerJeuDeCarte(jeuDeCarte& jeu) {
     Carte carteIntermediaire;

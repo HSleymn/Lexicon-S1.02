@@ -3,8 +3,7 @@
 //
 #include "pile.h"
 
-#include <iostream>
-#include <cassert>
+
 
 void initialiser(Pile& pileDeCartes, const unsigned int nombreDeCarteRestant ){
     assert(nombreDeCarteRestant>0);

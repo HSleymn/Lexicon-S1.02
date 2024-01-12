@@ -3,9 +3,7 @@
 //
 
 #include "joueur.h"
-#include "iostream"
-#define nombreDeCarte 51
-#define nombreDeCarteJoueur 10
+
 
 /*
  * @media

@@ -6,6 +6,16 @@
 #include "commandes.h"
 
 
+/**
+ * @brief detecter quelle est la commande entrée
+ * @param[in] joueur : le joueur
+ * @param[in] pileduTalon : la pile du talon
+ * @param[in] pileDeCartesExposees : la pile de cartes exposées
+ * @param[in] commande : la commande
+ * @param[in] is : le stream
+ * @param[in] tabMots : le tableau de mots
+
+ */
 int detectionDeLaCommande(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, Commande& commande, std::istringstream& is, TabMots& tabMots){
     if (detectionDeLaCommandeTE(joueur, pileduTalon, pileDeCartesExposees, commande, is) == ENTREE_VALIDE){
         commandeTE(joueur, pileduTalon, pileDeCartesExposees, commande);
@@ -42,6 +52,18 @@ int detectionDeLaCommande(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesE
 
     return ENTREE_INVALIDE;
 }
+
+
+/**
+ * @brief lire  la commande
+ * @param[in] joueur : le joueur
+ * @param[in] pileduTalon : la pile du talon
+ * @param[in] pileDeCartesExposees : la pile de cartes exposées
+ * @param[in] commande : la commande
+ * @param[in] is : le flux d entrée
+ * @param[in] tabMots : le tableau de mots
+
+ */
 int LectureCommande(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, Commande& commande, std::istream& is, TabMots& tabMots)
 {
     char input[64];
@@ -66,6 +88,16 @@ int LectureCommande(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposee
 
 }
 
+
+/**
+ * @brief detecter la commande T et E
+ * @param[in] joueur : le joueur
+ * @param[in] pileduTalon : la pile du talon
+ * @param[in] pileDeCartesExposees : la pile de cartes exposées
+ * @param[in] commande : la commande
+ * @param[in] is : le stream
+
+ */
 int detectionDeLaCommandeTE(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, Commande& commande, std::istringstream& is){
     if (commande.nomDeLaCommande != 'T' && commande.nomDeLaCommande != 'E'){
         return ENTREE_INVALIDE;
@@ -85,6 +117,16 @@ int detectionDeLaCommandeTE(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCarte
     }
 }
 
+
+/**
+ * @brief faire les commandes T et E
+ * @param[in] joueur : le joueur
+ * @param[in] pileduTalon : la pile du talon
+ * @param[in] pileDeCartesExposees : la pile de cartes exposées
+ * @param[in] commande : la commande
+
+
+ */
 void commandeTE(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, Commande& commande){
     int indiceCarteJoueur = rechercherDansLaMainDuJoueur(joueur, commande.lettreDeLaCarte);
     if(commande.nomDeLaCommande == 'E'){
@@ -103,6 +145,16 @@ void commandeTE(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, C
     }
 }
 
+
+/**
+ * @brief detecter la commande P
+ * @param[in] joueur : le joueur
+ * @param[in] pileduTalon : la pile du talon
+ * @param[in] pileDeCartesExposees : la pile de cartes exposées
+ * @param[in] commande : la commande
+ * @param[in] is : le stream
+
+ */
 int detectionDeLaCommandeP(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, Commande& commande, std::istringstream& is){
     if (commande.nomDeLaCommande != 'P'){
         return ENTREE_INVALIDE;
@@ -112,6 +164,17 @@ int detectionDeLaCommandeP(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartes
 
     }}
 
+
+/**
+ * @brief faire la commande P
+ * @param[in] joueur : le joueur
+ * @param[in] pileduTalon : la pile du talon
+ * @param[in] pileDeCartesExposees : la pile de cartes exposées
+ * @param[in] commande : la commande
+ * @param[in] is : le stream
+ * @param[in] tabMots : le tableau de mots
+
+ */
 int commandeP(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, Commande& commande, std::istringstream& is, TabMots& tabMots){
     Mot mots;
     initialiser(mots, 1, 1);
@@ -141,6 +204,16 @@ int commandeP(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, Com
     return ENTREE_VALIDE;
 }
 
+
+/**
+ * @brief detecter la commande R
+ * @param[in] joueur : le joueur
+ * @param[in] pileduTalon : la pile du talon
+ * @param[in] pileDeCartesExposees : la pile de cartes exposées
+ * @param[in] commande : la commande
+ * @param[in] is : le stream
+
+ */
 int detectionDeLaCommandeR(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, Commande& commande, std::istringstream& is){
     if (commande.nomDeLaCommande != 'R'){
         return ENTREE_INVALIDE;
@@ -150,6 +223,17 @@ int detectionDeLaCommandeR(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartes
 
     }}
 
+
+/**
+ * @brief faire la commande R
+ * @param[in] joueur : le joueur
+ * @param[in] pileduTalon : la pile du talon
+ * @param[in] pileDeCartesExposees : la pile de cartes exposées
+ * @param[in] commande : la commande
+ * @param[in] is : le stream
+ * @param[in] tabMots : le tableau de mots
+
+ */
 int commandeR(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, Commande& commande, std::istringstream& is, TabMots& tabMots){
     Mot mots;
     initialiser(mots, 1, 1);
@@ -219,6 +303,16 @@ int commandeR(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, Com
     return ENTREE_VALIDE;
 }
 
+
+/**
+ * @brief detecter la commande C
+ * @param[in] joueur : le joueur
+ * @param[in] pileduTalon : la pile du talon
+ * @param[in] pileDeCartesExposees : la pile de cartes exposées
+ * @param[in] commande : la commande
+ * @param[in] is : le stream
+
+ */
 int detectionDeLaCommandeC(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, Commande& commande, std::istringstream& is){
     if (commande.nomDeLaCommande != 'C'){
         return ENTREE_INVALIDE;
@@ -228,6 +322,17 @@ int detectionDeLaCommandeC(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartes
 
     }}
 
+
+/**
+ * @brief faire la commande C
+ * @param[in] joueur : le joueur
+ * @param[in] pileduTalon : la pile du talon
+ * @param[in] pileDeCartesExposees : la pile de cartes exposées
+ * @param[in] commande : la commande
+ * @param[in] is : le stream
+ * @param[in] tabMots : le tableau de mots
+
+ */
 int commandeC(Joueur& joueur, Pile& pileduTalon, Pile& pileDeCartesExposees, Commande& commande, std::istringstream& is, TabMots& tabMots){
     Mot mots;
     initialiser(mots, 1, 1);

@@ -78,38 +78,50 @@ int main(int argc, char** argv)
             }
         }
     }
+    std::cout << std::endl;
     std::cout << "La partie est finie";
     return 0;
 }
 
+/**
+ * @brief lire  la commande
+ * @param[in] lesJoueurs : les joueurs
+ * @param[in] jeuDeCartes : le jeu de cartes
+ * @param[in] tabMots : le tableau de mots
+ * @param[in] pileDuTalon : la pile du talon
+ * @param[in] pileCartesExposees :  la pile de cartes exposées
+
+ */
 void initialisationNouveauTour(Joueurs& lesJoueurs, jeuDeCarte& jeuDeCartes, TabMots& tabMots, Pile& pileDuTalon, Pile& pileCartesExposees){
     ajoutPointsFinDeTour(lesJoueurs);
     std::cout << "Le tour est fini" << std::endl << "* Scores" << std::endl;
     for(int compteurJoueur=0; compteurJoueur < lesJoueurs.nbJoueursTotal ; compteurJoueur++) {
         if(verificationJoueurEnLice(lesJoueurs, lesJoueurs.tabJoueurs[compteurJoueur]))
-            std::cout << "Joueur " << lesJoueurs.tabJoueurs[compteurJoueur].idJoueur << " : " << lesJoueurs.tabJoueurs[compteurJoueur].nombreDePoints << std::endl;
+            std::cout << "Joueur " << lesJoueurs.tabJoueurs[compteurJoueur].idJoueur << " : "
+            << lesJoueurs.tabJoueurs[compteurJoueur].nombreDePoints << std::endl; //affichage des scores
     }
     for(int compteur=0; compteur<lesJoueurs.nbJoueursTotal; compteur++){
         if(lesJoueurs.tabJoueurs[compteur].nombreDePoints > 100){
-            eliminationJoueur(lesJoueurs, lesJoueurs.tabJoueurs[compteur]);
+            eliminationJoueur(lesJoueurs, lesJoueurs.tabJoueurs[compteur]); //on procède aux éliminations nécessaires
         }
     }
 
-    detruire(pileDuTalon);
-    detruire(pileCartesExposees);
-    initialiserJeuDeCarte(jeuDeCartes);
+    detruire(pileDuTalon); //on detruit cette pile
+    detruire(pileCartesExposees);  //on detruit cette pile
+    initialiserJeuDeCarte(jeuDeCartes); //on initialise le jeu de carte (détruit dans le remplirTalonEtExposee() cf. talonEtExposee.cpp)
     unsigned int indiceCarte=0;
     for(int compteur=0; compteur < lesJoueurs.nbJoueursTotal; compteur++){
         if(verificationJoueurEnLice(lesJoueurs, lesJoueurs.tabJoueurs[compteur])){
-            initialiserLaMainDuJoueur(lesJoueurs.tabJoueurs[compteur], jeuDeCartes, indiceCarte);
+            initialiserLaMainDuJoueur(lesJoueurs.tabJoueurs[compteur], jeuDeCartes, indiceCarte);//on distribue aux joueurs restants
             indiceCarte++;
         }
     }
     recupererJeuDeCarteRestant(jeuDeCartes, lesJoueurs.nbJoueursEnLice);
     initialiser(pileDuTalon, jeuDeCartes.capacite);
     initialiser(pileCartesExposees, jeuDeCartes.capacite);
-    remplirTalonEtExposee(pileDuTalon, pileCartesExposees, jeuDeCartes);
-    initialiserTableauDeMot(tabMots, TAILLE_TABLEAU , PAS_EXTENSTION_TABLEAU_MOT);
+    remplirTalonEtExposee(pileDuTalon, pileCartesExposees, jeuDeCartes); //on reconstruit un nouveau talon et une nouvelle pile de cartes exposées
+    delete [] tabMots.tableauDeMots; //on detruit le tableau de mot
+    initialiserTableauDeMot(tabMots, TAILLE_TABLEAU , PAS_EXTENSTION_TABLEAU_MOT); //on initialise un nouveau tableau de mot
 
 }
 

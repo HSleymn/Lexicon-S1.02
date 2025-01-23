@@ -1,67 +1,77 @@
-# Titre du projet
-_(juste en dessous des badges sympatiques à placer)_
+# Lexicon S1.02
 
-[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)  [![forthebadge](http://forthebadge.com/images/badges/powered-by-electricity.svg)](http://forthebadge.com)
+Ce projet a été mon deuxième projet en 1ère année de BUT Informatique, intégralement réalisé en C++.
 
-Une petite description du projet
+## But du jeu
 
-## Pour commencer
+Le but du projet est de développer un logiciel permettant à un ensemble de joueurs de disputer une partie de Lexicon. L’application doit veiller au respect des règles du jeu et gérer la totalité du déroulement de la partie jusqu’à l’annonce du gagnant. Chaque joueur dispose au début de chaque partie de 10 cartes (en réalité des lettres) et le but de vider sa main. 
 
-Entrez ici les instructions pour bien débuter avec votre projet...
+## Avant de lancer une partie..
 
-### Pré-requis
+Assurez-vous d'entrer en paramètre un nombre valide de joueur allant de 2 à 4.
 
-Ce qu'il est requis pour commencer avec votre projet...
+## Comment jouer ?
 
-- Programme 1
-- Programme 2
-- etc...
+5 choix possibles : piocher du talon, piocher la carte exposée, poser un mot, remplacer un mot déjà posé ou compléter un mot déja posé.
+Ce jeu se joue entièrement dans le terminal, ainsi pour lancer chacune des possibilités citées, voici comment faire:
 
-### Installation
+**Piocher du talon**
 
-Les étapes pour installer votre programme....
+```Input : T "lettre à remplacer"```
 
-Dites ce qu'il faut faire...
+La lettre à remplacer doit impérativement être présente dans la main.
 
-_exemple_: Executez la commande ``telnet mapscii.me`` pour commencer ensuite [...]
+*Exemple :*
 
+```
+(Commandes valides : TEPRC)
+* Joueur 1 (G) KBGEDNSCEB
+> T K
+.
+.
 
-Ensuite vous pouvez montrer ce que vous obtenez au final...
+* Joueur 1 (I) QBGEDNSCEB
+> 
+```
+On voit que le K à été remplacer par le Q.
+Il est important de savoir que la carte choisies dans la main du joueur devient la carte exposée courante.
 
-## Démarrage
+**Piocher la carte exposée**
 
-Dites comment faire pour lancer votre projet
+```Input : E "lettre à remplacer"```
 
-## Fabriqué avec
+La lettre à remplacer doit impérativement être présente dans la main.
+La carte exposées est la carte qui figure entre parenthèse.
+Elle est énoncée à chaque tour.
 
-Entrez les programmes/logiciels/ressources que vous avez utilisé pour développer votre projet
+*Exemple :*
 
-_exemples :_
-* [Materialize.css](http://materializecss.com) - Framework CSS (front-end)
-* [Atom](https://atom.io/) - Editeur de textes
+```
+* Joueur 2 (D) EQALHEJRNH
+> E Q
+.
+.
 
-## Contributing
+* Joueur 2 (Q) EDALHEJRNH
+1 - SE
+> 
+```
 
-Si vous souhaitez contribuer, lisez le fichier [CONTRIBUTING.md](https://example.org) pour savoir comment le faire.
+**Poser un mot**
 
-## Versions
-Listez les versions ici 
-_exemple :_
-**Dernière version stable :** 5.0
-**Dernière version :** 5.1
-Liste des versions : [Cliquer pour afficher](https://github.com/your/project-name/tags)
-_(pour le lien mettez simplement l'URL de votre projets suivi de ``/tags``)_
+```Input : P "mot à placer"```
 
-## Auteurs
-Listez le(s) auteur(s) du projet ici !
-* **Jhon doe** _alias_ [@outout14](https://github.com/outout14)
+Les lettres du mot à placer doivent être impérativement présentes dans la main.
 
-Lisez la liste des [contributeurs](https://github.com/your/project/contributors) pour voir qui à aidé au projet !
+*Exemple :*
 
-_(pour le lien mettez simplement l'URL de votre projet suivi de ``/contirubors``)_
-
-## License
-
-Ce projet est sous licence ``exemple: WTFTPL`` - voir le fichier [LICENSE.md](LICENSE.md) pour plus d'informations
-
-
+```
+* Joueur 1 (Q) TIGEDNSCEB
+> P SE
+.
+.
+* Joueur 1 (E) TIGDNCEB
+1 - SE
+> 
+```
+Les lettres ont bien été retirées.

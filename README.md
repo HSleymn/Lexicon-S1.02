@@ -75,3 +75,27 @@ Les lettres du mot à placer doivent être impérativement présentes dans la ma
 > 
 ```
 Les lettres ont bien été retirées.
+
+**Compléter un mot déjà posé**
+
+```Input : C "identifiant du mot à compléter" "mot avec la complétion"```
+
+Les lettres additionnelles au mot originel doivent être impérativement présentes dans la main.
+L'identifiant du mot doit être correct.
+Le nouveau mot doit être un mot valide.
+
+*Exemple :*
+
+```
+* Joueur 1 (J) ADEECHAGEB
+> P DE
+
+* Joueur 2 (J) HGFOISIRNU
+1 - DE
+> C 1 DESIR
+.
+.
+* Joueur 2 (A) HGFOINU
+1 - DESIR
+> 
+```

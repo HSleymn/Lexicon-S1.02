@@ -1,132 +1,140 @@
 # Lexicon S1.02
 
-Ce projet a été mon deuxième projet en 1ère année de BUT Informatique, intégralement réalisé en C++.
+Lexicon est un jeu de cartes et de mots où les joueurs tentent de vider leur main en formant des mots valides à partir des lettres qu'ils possèdent. Ce projet est une implémentation en C++ de ce jeu, développé dans le cadre d'un projet de première année de BUT Informatique.
 
-## But du jeu
+---
 
-Le but du projet est de développer un logiciel permettant à un ensemble de joueurs de disputer une partie de Lexicon.  
-L’application doit veiller au respect des règles du jeu et gérer la totalité du déroulement de la partie jusqu’à l’annonce du gagnant.  
-Chaque joueur dispose au début de chaque partie de 10 cartes (en réalité des lettres) et le but de vider sa main.   
+## 📋 Table des matières
+1. But du jeu
+2. Fonctionnalités
+3. Structure du projet
+4. Comment jouer ?
+5. Installation
+6. Compilation et exécution
+7. Contribution
+8. Auteur
+9. Licence
+---
 
-## Avant de lancer une partie..
+## 🎯 But du jeu
 
-Assurez-vous d'entrer en paramètre un nombre valide de joueur allant de 2 à 4.  
+Le but du jeu est de vider sa main de cartes en formant des mots valides à partir des lettres disponibles. Chaque joueur commence avec 10 cartes (lettres) et doit les utiliser pour créer des mots. Le jeu se termine lorsqu'un joueur réussit à vider sa main ou lorsque les conditions de fin de partie sont remplies.
 
-## Comment jouer ?
+---
 
-5 choix possibles : piocher du talon, piocher la carte exposée, poser un mot, remplacer un mot déjà posé ou compléter un mot déja posé.  
-Ce jeu se joue entièrement dans le terminal, ainsi pour lancer chacune des possibilités citées, voici comment faire:
+## 🛠 Fonctionnalités
 
-**Piocher du talon**
+- **Gestion des joueurs** : Initialisation des joueurs, distribution des cartes et suivi des points.
+- **Gestion des cartes** : Mélange des cartes, distribution et gestion du talon et de la pile de cartes exposées.
+- **Validation des mots** : Vérification des mots proposés par les joueurs à l'aide d'un dictionnaire.
+- **Commandes du jeu** :
+  - **Piocher une carte** : Tirer une carte du talon ou de la pile exposée.
+  - **Échanger une carte** : Échanger une carte de sa main avec la carte au sommet de la pile des cartes exposées.
+  - **Poser un mot** : Utiliser les lettres de sa main pour former un mot valide.
+  - **Remplacer un mot** : Remplacer un mot déjà posé par un nouveau mot.
+  - **Compléter un mot** : Ajouter des lettres à un mot déjà posé pour en former un nouveau.
+- **Fin de partie** : Calcul des scores et détermination du gagnant.
 
-```Input : T "lettre à remplacer"```
+---
 
-La lettre à remplacer doit impérativement être présente dans la main.
+## 📂 Structure du projet
 
-*Exemple :*
+Le projet est structuré comme suit :
 
-```
-(Commandes valides : TEPRC)
-* Joueur 1 (G) KBGEDNSCEB
-> T K
-.
-.
-
-* Joueur 1 (I) QBGEDNSCEB
-> 
-```
-On voit que le K à été remplacer par le Q.  
-Il est important de savoir que la carte choisies dans la main du joueur devient la carte exposée courante.
-
-**Piocher la carte exposée**
-
-```Input : E "lettre à remplacer"```
-
-La lettre à remplacer doit impérativement être présente dans la main.  
-La carte exposées est la carte qui figure entre parenthèse.  
-Elle est énoncée à chaque tour.  
-
-*Exemple :*
-
-```
-* Joueur 2 (D) EQALHEJRNH
-> E Q
-.
-.
-
-* Joueur 2 (Q) EDALHEJRNH
-1 - SE
-> 
-```
-
-**Poser un mot**
-
-```Input : P "mot à placer"```
-
-Les lettres du mot à placer doivent être impérativement présentes dans la main.  
-
-*Exemple :*
-
-```
-* Joueur 1 (Q) TIGEDNSCEB
-> P SE
-.
-.
-* Joueur 1 (E) TIGDNCEB
-1 - SE
-> 
-```
-Les lettres ont bien été retirées.
+hsleymn-lexicon-s1.02/
+├── README.md
+├── carte.cpp
+├── carte.h
+├── commandes.cpp
+├── commandes.h
+├── joueur.cpp
+├── joueur.h
+├── main.cpp
+├── main.h
+├── mots.cpp
+├── mots.h
+├── pile.cpp
+├── pile.h
+├── talonEtExposee.cpp
+└── talonEtExposee.h
+Copy
 
 
-**Remplacer un mot déjà posé**
+### Description des fichiers principaux :
+- **`carte.cpp` / `carte.h`** : Gestion des cartes et du jeu de cartes.
+- **`joueur.cpp` / `joueur.h`** : Gestion des joueurs, de leurs mains et de leurs points.
+- **`mots.cpp` / `mots.h`** : Validation des mots et gestion du dictionnaire.
+- **`pile.cpp` / `pile.h`** : Implémentation d'une pile pour gérer le talon et les cartes exposées.
+- **`commandes.cpp` / `commandes.h`** : Gestion des commandes du jeu (piocher, poser un mot, etc.).
+- **`talonEtExposee.cpp` / `talonEtExposee.h`** : Gestion du talon et de la pile de cartes exposées.
+- **`main.cpp` / `main.h`** : Point d'entrée du programme et gestion du déroulement de la partie.
 
-```Input : R "identifiant du mot à compléter" "mot remplaçant"```
+---
 
-Les lettres remplaçantes doivent être impérativement présentes dans la main.  
-L'identifiant du mot à remplacer doit être correct.  
-Le mot remplaçant doit être un mot valide.  
-Les lettres remplacées sont remises au joueurs.  
+## 🎮 Comment jouer ?
 
-*Exemple :*
+### Commandes disponibles :
+1. **Piocher du talon** :
+   ```bash
+   T <lettre_à_remplacer>
 
-```
-* Joueur 1 (E) OBQDCDFIHN
-> P DON
+ Exemple : T K pour remplacer la lettre K par une carte du talon.  
 
-* Joueur 2 (E) SAGECNSTEN
-1 - DON
-> R 1 SON
+ Piocher la carte exposée :
 
-.  
-.  
-* Joueur 2 (B) DAGECNSTEN
-1 - SON
-> 
-```
-La lettre S a bien été remplacée par la lettre D.  
+    E <lettre_à_remplacer>
+
+ Exemple : E Q pour remplacer la lettre Q par la carte exposée.
+ Poser un mot :
 
 
-**Compléter un mot déjà posé**
+    P <mot_à_poser>
 
-```Input : C "identifiant du mot à compléter" "mot avec la complétion"```
+ Exemple : P SE pour poser le mot "SE".
+ 
+ Remplacer un mot :
+    
 
-Les lettres additionnelles au mot originel doivent être impérativement présentes dans la main.  
-L'identifiant du mot doit être correct.  
-Le nouveau mot doit être un mot valide.  
+    R <id_du_mot> <nouveau_mot>
 
-*Exemple :*
+ Exemple : R 1 SON pour remplacer le mot à l'identifiant 1 par "SON".
 
-```
-* Joueur 1 (J) ADEECHAGEB
-> P DE
+ Compléter un mot :
 
-* Joueur 2 (J) HGFOISIRNU
-1 - DE
-> C 1 DESIR
-.
-.
-* Joueur 2 (A) HGFOINU
-1 - DESIR
-> 
-```
+    C <id_du_mot> <mot_complété>
+
+ Exemple : C 1 DESIR pour compléter le mot à l'identifiant 1 en "DESIR".
+
+💻 Installation
+
+Clonez le dépôt :
+    
+    git clone https://github.com/HSleymn/hsleymn-lexicon-s1.02.git
+
+Accédez au répertoire du projet :
+
+
+    cd hsleymn-lexicon-s1.02
+
+🛠 Compilation et exécution
+
+Compilez le programme :
+   
+
+    g++ main.cpp carte.cpp commandes.cpp joueur.cpp mots.cpp pile.cpp talonEtExposee.cpp -o lexicon
+
+Exécutez le programme :
+
+
+    ./lexicon <nombre_de_joueurs>
+
+Remplacez <nombre_de_joueurs> par un nombre entre 2 et 4.
+
+
+👤 Auteur
+
+    HADJ MESSAOUD Souleymane - HSleymn
+
+📜 Licence
+
+Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus de détails.
